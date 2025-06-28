@@ -991,6 +991,9 @@ Q.industrial_dnf_backing = 0;
 Q.industrial_dnef_backing = 0;
 Q.industrial_nsdap_backing = 0;
 
+//Economics Changes:
+Q.state_reichsbank = 0;
+
 // flavour text stuff
 for (let i = 0; i <= 100; i++) {
     Q[`flavour_${i}_trigger`] = 0;
