@@ -15,6 +15,7 @@ What can we do?
 - @seize
 - @capital_controls
 - @propaganda
+- @printer
 - @nothing
 
 @seize
@@ -34,7 +35,14 @@ on-arrival: unemployed -= 1.5; workers_spd += 6*(1-dissent); unemployed_spd += 6
 
 Capital controls might blunt some of the worst economic components of the capital strike.
 
+@printer
+title: Print money to give to the workers to lessen the impact.
+subtitle: What do you mean we already tried this in 1923?
+choose-if: state_reichsbank and in_spd_majority
+unavailable-subtitle: [? if not state_reichsbank: Reichsbank ?] [? if not in_spd_majority: Our coalition partners ?] would never allow this.
+on-arrival: unemployed -= 2; inflation += 10; inflation *= 1.5 if inflation > 0; workers_spd += 6; unemployed_spd += 6; dvp_relation -= 3; ddp_relation -= 3; lvp_relation -= 3; dvp_right += 3; ddp_right += 2; lvp_right += 2; economic_growth += 2; new_middle_spd -= 7; old_middle_spd -= 7;
 
+We have printed more money to allocate to alleviate the worst effects of the crisis. However, inflation has begun to skyrocket.
 
 @propaganda
 title: Launch a propaganda campaign blaming the capitalists for the crisis.
