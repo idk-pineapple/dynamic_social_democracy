@@ -27,10 +27,10 @@ Lower-income tax rates: [+ lower_tax_rates : taxation +]
 - @cut_overall: Cut overall taxes.
 - @raise_progressive: Make the tax system more progressive by raising taxes on the rich and cutting them for the poor.
 - @regressive
-- @tariffs
-- @root: Do not change the tax system.
 - @reichsbank: Abolish the independence of Reichsbank.
 - @printer: We can print money.
+- @tariffs
+- @root: Do not change the tax system.
 - @easy_discard
 - @cancel_advisor_action
 
@@ -47,7 +47,7 @@ We have pushed through an amendment to the Bank Law asserting state control over
 subtitle: What could possibly go wrong? +3 Budget
 unavailable-subtitle: [? if not state_reichsbank: Reichsbank would never allow this. ?] [? if center_strength > 40 or hilferding_advisor: Hiferding and the Center Faction manage to dissuade the party from doing this drastic action. ?]
 choose-if: state_reichsbank and (center_strength < 40 and not hilferding_advisor)
-on-arrival: budget += 3; inflation += 8; inflation += 4 if inflation < 0; inflation *= 1.5 if inflation > 0; old_middle_nsdap += 6; new_middle_others += 4; old_middle_spd *= 0.9; new_middle_spd *= 0.9; capital_strike_progress += 2; goal_spd_cancel_peoples += 1; ddp_relation -= 3; dvp_relation -= 3;  dvp_right += 2; lvp_right += 2; ddp_right += 2; ddp_cohesion -= 1
+on-arrival: budget += 3; inflation += 8; inflation += 4 if inflation < 0; inflation *= 1.5 if inflation > 0; inflation *= 2 if inflation > 50; old_middle_nsdap += 6; new_middle_others += 4; old_middle_spd *= 0.9; new_middle_spd *= 0.9; capital_strike_progress += 2; goal_spd_cancel_peoples += 1; ddp_relation -= 3; dvp_relation -= 3;  dvp_right += 2; lvp_right += 2; ddp_right += 2; ddp_cohesion -= 1
 
 We have ordered Reichsbank to print further funds for the purposes of government spending. Naturally, this is highly alienating to the middle class, who have begun to bleed from our ranks. Nonetheless, we have more money to spend now, though inflation is starting to tick back up. 
 
