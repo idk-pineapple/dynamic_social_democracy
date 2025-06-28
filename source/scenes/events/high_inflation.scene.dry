@@ -15,6 +15,7 @@ The people and the press are clamoring for action to reduce inflation.
 - @welfare: Reduce welfare and social spending.
 - @price_controls: Impose price and wage controls.
 - @bank: Surely the Reichsbank has a plan this time?
+- @state-bank: Surely the Reichsbank has a plan this time?
 - @nothing: Realistically, there is nothing we can do.
 
 @taxes
@@ -33,9 +34,17 @@ on-arrival: capital_strike_progress += 3; inflation -= 3; coalition_dissent += 1
 Price controls are very unpopular with the bourgeoisie and their representatives, as well as rural producers, while wage controls hurt organized workers. However, the policies do stem the tide of inflation, at least somewhat.
 
 @bank
+view-if: not state_reichsbank
 on-arrival: capital_strike_progress += 2
 
 Unfortunately, but perhaps expectedly, the Reichsbank is refusing to help the government, claiming that our <span style="color: #c00000;">socialist</span> policies are solely to blame. Reichsbank president [? if not luther_reichsbank: Friedrich Dreyse ?][? if luther_reichsbank: Hans Luther ?] is all but calling for the fall of the government.
+
+@state-bank
+view-if: state_reichsbank
+subtitle: -1 Budget
+on-arrival: inflation *= 0.9 if inflation > 10; inflation -= 4; old_middle_spd -= 3; new_middle_spd += 3; economic_growth -= 0.3; unemployed += 1; budget -= 1
+
+The Reichsbank puts forth a series of measures designed to control the rise in inflation. It does moderately stem the tide of inflation, though at the cost of some economic growth.
 
 @nothing
 on-arrival: capital_strike_progress += 1
