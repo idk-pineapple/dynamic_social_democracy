@@ -37,7 +37,7 @@ Lower-income tax rates: [+ lower_tax_rates : taxation +]
 @reichsbank
 subtitle: This will be controversial among the centrist parties, as well as our middle-class voter base.
 unavailable-subtitle: We do not have enough support in the Reichstag for such a move. 
-choose-if: spd_majority
+choose-if: in_spd_majority
 view-if: not state_reichsbank
 on-arrival: state_reichsbank = 1; new_middle_ddp += (0.1*new_middle_spd); new_middle_lvp += (0.1*new_middle_spd) if lvp_formed; old_middle_dvp += (0.1*old_middle_spd); old_middle_lvp += (0.1*old_middle_spd) if lvp_formed; old_middle_spd *= 0.9; new_middle_spd *= 0.9; capital_strike_progress += 3; ddp_relation -= 5; dvp_relation -= 5; finance_goal_completed += 1; dvp_right += 3; lvp_right += 3; ddp_right += 2; ddp_cohesion -= 1; lvp_relation -= 5; finance_goal_spd += 1; goal_spd_cancel_peoples += 1; left_dissent -= 10; labour_dissent -= 10; z_relation -= 5
 We have pushed through an amendment to the Bank Law asserting state control over Reichsbank. As expected, our former bourgeois allies are furious, as are our bourgeois voters. Former Reichsbank President [? if not luther_reichsbank: Friedrich Dreyse ?][? if luther_reichsbank: Hans Luther ?] has strongly denounced our government, [? if capital_strike_progress < 10: but there is nothing they can do. ?][? if capital_strike_progress > 9: but they can't do anything, right? ?]
