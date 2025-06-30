@@ -1055,6 +1055,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         Q.unemployed += 0.1;
     }
     // economic growth
+    Q.gdp *= (1 + (economic_growth/12));
     if (Q.economic_growth < -0.5 && Q.unemployed <= 16) {
         Q.unemployed += 0.1;
     }
@@ -1656,6 +1657,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
 
     ////////////////////////// annual support changes
     if (Q.year == 1929) {
+        Q.budget += income;
         Q.unemployed += 3/12;
         Q.inflation -= 1/12;
         // increase NSDAP vote share
@@ -1731,6 +1733,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             Q.new_middle_dnvp += 3/12;
         }
 } else if (Q.year == 1930) {
+        Q.budget += income;
         if (Q.month < 7) Q.unemployed += 3/12; 
         if (Q.month >= 7) Q.unemployed += 5/12; 
         Q.inflation -= 4/12;
@@ -1793,6 +1796,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
         Q.sa_strength += 75/12;
         Q.rfb_strength += 25/12;
     } else if (Q.year == 1931) {
+        Q.budget += income;
         Q.unemployed += 5/12;
         Q.inflation -= 5/12;
         if (Q.z_leader == "Kaas") {
@@ -1927,6 +1931,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
                 }
         }
     } else if (Q.year == 1932) {
+        Q.budget += income;
         Q.workers_other -= 2/12;
         Q.workers_nsdap += 2/12;
         if (Q.dnf_formed) {
@@ -2058,6 +2063,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
             }
         }
     } else if (Q.year >= 1933) {
+        Q.budget += income;
         if (Q.return_to_normalcy) {
             // return to normalcy -> voters return to the base
             if (Q.new_middle_ddp_normalized < 15) {
@@ -2140,6 +2146,7 @@ if ((Q.month_actions >= 1 && !Q.rubicon) || (Q.month_actions >= 4 && Q.rubicon))
     }
     // prevent forever support if the economy is bad
     if (Q.year >= 1934) {
+        Q.budget += income;
         if (Q.unemployed >= 15 && Q.year == 1934) {
             Q.unemployed *= 0.98;
             Q.inflation += 3/12;
