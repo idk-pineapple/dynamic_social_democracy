@@ -81,6 +81,8 @@ Reichstag composition:
 
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
+[? if spd_in_government = 1 : Income: [+ income +] ?]
+
 Next election: [+ next_election_month : month +] [+ next_election_year +]
 
 Next Prussian election: [? if prussia_leader != "Papen" and prussia_leader != "Schleicher": [+ next_election_month_prussia : month +] [+ next_election_year_prussia +][? if rubicon:, Week [+ next_election_week_prussia +] ?] ?][? if prussia_leader == "Papen" or prussia_leader == "Schleicher": postponed indefinitely ?]
@@ -92,6 +94,8 @@ Inflation: [+ inflation_2 +]%
 [? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]
 
 Economic growth: [+ economic_growth_2 +]%
+
+Economic Capacity: [+ gdp +]%
 
 @emergency
 on-arrival: {!
@@ -145,7 +149,9 @@ Support for the Republic: [+ pro_republic_disp +]%<br>
 = Economics
 
 Inflation: [+ inflation_2 +]%<br>
+
 [? if black_thursday_seen = 1 : Unemployment: [+ unemployed_2 +]% ?]<br>
+
 Economic growth: [+ economic_growth_2 +]%
 
 @politics
